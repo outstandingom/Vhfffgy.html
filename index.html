@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowHaz - Social Media Services Proposal & SRS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        @media print {
+            body {
+                font-size: 11pt;
+            }
+            .no-print {
+                display: none !important;
+            }
+            section {
+                page-break-before: always;
+            }
+            section:first-child {
+                page-break-before: avoid;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .pricing-card {
+                page-break-inside: avoid;
+            }
+        }
+        .requirement-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .requirement-table th, .requirement-table td {
+            border: 1px solid #e2e8f0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .requirement-table th {
+            background-color: #f1f5f9;
+        }
+        .pricing-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 md:p-8 max-w-6xl mx-auto">
+    <div class="no-print flex justify-between items-center mb-8">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium shadow-sm">
+            📄 Save as PDF / Print
+        </button>
+        <div class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm">GrowHaz - Service Scope & Agreement</div>
+    </div>
+
+    <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+        <!-- Cover Page / Header with Client Name -->
+        <header class="text-center mb-12 border-b border-gray-200 pb-8">
+            <div class="flex justify-between items-start flex-wrap gap-4 mb-4">
+                <div class="text-left">
+                    <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide">Proposal For</div>
+                    <div class="text-2xl font-bold text-gray-800">Hemant Kumar Chourasiya</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide">Service Partner</div>
+                    <div class="text-xl font-bold text-gray-800">Scan Spot (Agency)</div>
+                </div>
+            </div>
+            <h1 class="text-4xl font-extrabold text-blue-800 mb-3 mt-6">GrowHaz</h1>
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Social Media Content & Design Package</h2>
+            <div class="inline-block bg-blue-50 text-blue-700 px-4 py-1 rounded-full text-sm font-medium mb-4">📅 Deliverables: 12 Months Campaign | High-Impact Visuals</div>
+            <div class="border-t border-gray-200 py-4 mt-2">
+                <p class="text-gray-600"><span class="font-semibold">Version:</span> 1.0 (Final)</p>
+                <p class="text-gray-600"><span class="font-semibold">Prepared by:</span> Scan Spot Creative Team</p>
+                <p class="text-gray-600"><span class="font-semibold">Date:</span> 6, AUGUST, 2025</p>
+                <p class="text-gray-600"><span class="font-semibold">Valid Until:</span> 30, SEPTEMBER, 2025</p>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <section class="mb-12 bg-gray-50 p-5 rounded-lg">
+            <h2 class="text-xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">📋 Table of Contents</h2>
+            <div class="grid md:grid-cols-2 gap-2">
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><a href="#executive-summary" class="text-blue-600 hover:underline">1. Executive Summary</a></li>
+                    <li><a href="#service-scope" class="text-blue-600 hover:underline">2. Service Scope & Deliverables</a></li>
+                    <li><a href="#pricing" class="text-blue-600 hover:underline">3. Pricing & Package Breakdown</a></li>
+                    <li><a href="#timeline" class="text-blue-600 hover:underline">4. Timeline & Milestones</a></li>
+                </ul>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><a href="#quality-assurance" class="text-blue-600 hover:underline">5. Quality Assurance & Revisions</a></li>
+                    <li><a href="#terms" class="text-blue-600 hover:underline">6. Terms & Inclusions</a></li>
+                    <li><a href="#approval" class="text-blue-600 hover:underline">7. Approval & Sign-off</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 1. Executive Summary -->
+        <section id="executive-summary" class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">1. Executive Summary</h2>
+            <p class="mb-3 text-gray-700">This document outlines the complete social media content deliverables for <strong class="text-blue-700">GrowHaz</strong> (Client: Hemant Kumar Chourasiya). We will deliver a strategic mix of static posts, high-engagement reels, and professional PowerPoint presentations designed to boost brand presence, conversions, and audience retention across platforms.</p>
+            <p class="mb-2">Our creative approach ensures each asset aligns with GrowHaz brand identity, industry trends, and performance marketing goals. The package includes:</p>
+            <ul class="list-disc pl-6 space-y-1 mb-3">
+                <li><strong>200 Custom Graphic Posts</strong> (1 to 3 pages per poster, carousel-ready)</li>
+                <li><strong>60 Engaging Reels</strong> (45–60 seconds each, optimized for Instagram/YouTube Shorts)</li>
+                <li><strong>3 Comprehensive PPTs</strong> (with confirmed page counts: 50, 40 & 20 slides respectively)</li>
+            </ul>
+            <div class="bg-blue-50 p-4 rounded-md border-l-4 border-blue-500 text-sm">
+                💡 <span class="font-semibold">Key Objective:</span> Increase social media engagement by 40%, streamline brand storytelling, and provide ready-to-publish assets with 2 rounds of revisions per deliverable.
+            </div>
+        </section>
+
+        <!-- 2. Service Scope & Deliverables -->
+        <section id="service-scope" class="mb-12 page-break">
+            <h2 class="text-2xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">2. Service Scope & Deliverables</h2>
+            <p class="mb-4">We will deliver high-quality creative assets tailored to GrowHaz's brand voice. Below are the detailed specifications:</p>
+            
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">📸 200 Posts (Social Media Graphics)</h3>
+            <table class="requirement-table mb-6">
+                <thead>
+                    <tr><th>Attribute</th><th>Specification</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="font-medium">Format</td><td>Static / Carousel (max 1 to 3 pages per poster)</td></tr>
+                    <tr><td class="font-medium">Dimensions</td><td>1080x1080px (square) / 1080x1350px (portrait) – adaptable</td></tr>
+                    <tr><td class="font-medium">Content Types</td><td>Quotes, promotional offers, educational carousels, product highlights, testimonials, countdowns</td></tr>
+                    <tr><td class="font-medium">File Output</td><td>High-res JPG/PNG + editable source (Canva/PSD if needed)</td></tr>
+                    <tr><td class="font-medium">Monthly Cadence</td><td>20 posts per month over 10 months (flexible schedule)</td></tr>
+                </tbody>
+            </table>
+            
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">🎬 60 Reels (Short-Form Video)</h3>
+            <table class="requirement-table mb-6">
+                <thead><tr><th>Attribute</th><th>Specification</th></tr></thead>
+                <tbody>
+                    <tr><td class="font-medium">Duration</td><td>45 to 60 seconds each</td></tr>
+                    <tr><td class="font-medium">Aspect Ratio</td><td>9:16 (1080x1920) – optimized for Reels, Shorts, TikTok</td></tr>
+                    <tr><td class="font-medium">Editing Style</td><td>Dynamic transitions, captions, stock footage + original graphics, brand overlays</td></tr>
+                    <tr><td class="font-medium">Inclusions</td><td>Sound design, royalty-free music, text animations, call-to-action overlays</td></tr>
+                    <tr><td class="font-medium">Delivery</td><td>MP4 / MOV, high bitrate ready for upload</td></tr>
+                </tbody>
+            </table>
+            
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">📊 3 PowerPoint Presentations (Business/Investor/Strategy Decks)</h3>
+            <table class="requirement-table mb-4">
+                <thead><tr><th>Presentation</th><th>Confirmed Page Count</th><th>Purpose / Theme</th></tr></thead>
+                <tbody>
+                    <tr><td class="font-medium">PPT #1</td><td>50 Slides</td><td>Comprehensive Business Plan / Company Profile</td></tr>
+                    <tr><td class="font-medium">PPT #2</td><td>40 Slides</td><td>Marketing Strategy & Growth Roadmap</td></tr>
+                    <tr><td class="font-medium">PPT #3</td><td>20 Slides</td><td>Investor Pitch / Executive Summary</td></tr>
+                </tbody>
+            </table>
+            <p class="text-sm text-gray-500 italic">*All PPTs include custom layouts, data visualizations, brand-compliant typography, and can be delivered in PPTX and PDF formats.</p>
+        </section>
+
+        <!-- 3. Pricing & Package Breakdown (exactly as per customer quote) -->
+        <section id="pricing" class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">💰 3. Pricing & Investment Breakdown</h2>
+            <p class="mb-4">Pricing is fixed as per agreement with Hemant Kumar Chourasiya. All rates are inclusive of creative design, editing, revisions, and final delivery.</p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <!-- Posts Card -->
+                <div class="pricing-card p-5 rounded-xl shadow-sm bg-white border border-gray-200">
+                    <div class="text-3xl mb-2">🖼️</div>
+                    <h3 class="text-xl font-bold text-gray-800">Custom Posts</h3>
+                    <p class="text-gray-500 text-sm">1–3 pages per poster</p>
+                    <div class="mt-3 text-2xl font-bold text-blue-700">₹28,000</div>
+                    <div class="text-sm text-gray-500 mt-1">200 Posts × ₹140</div>
+                    <hr class="my-3">
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>✓ 20 posts/month (flexible timeline)</li>
+                        <li>✓ Carousel & static options</li>
+                        <li>✓ Brand kit applied</li>
+                    </ul>
+                </div>
+                <!-- Reels Card -->
+                <div class="pricing-card p-5 rounded-xl shadow-sm bg-white border border-gray-200">
+                    <div class="text-3xl mb-2">🎥</div>
+                    <h3 class="text-xl font-bold text-gray-800">High-Impact Reels</h3>
+                    <p class="text-gray-500 text-sm">45–60 sec | optimized engagement</p>
+                    <div class="mt-3 text-2xl font-bold text-blue-700">₹24,000</div>
+                    <div class="text-sm text-gray-500 mt-1">60 Reels × ₹400</div>
+                    <hr class="my-3">
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>✓ Captions + transitions</li>
+                        <li>✓ Trend-based editing</li>
+                        <li>✓ Up to 2 revisions per reel</li>
+                    </ul>
+                </div>
+                <!-- PPT Card -->
+                <div class="pricing-card p-5 rounded-xl shadow-sm bg-white border border-gray-200">
+                    <div class="text-3xl mb-2">📑</div>
+                    <h3 class="text-xl font-bold text-gray-800">PowerPoint Decks</h3>
+                    <p class="text-gray-500 text-sm">50 + 40 + 20 pages (confirmed)</p>
+                    <div class="mt-3 text-2xl font-bold text-blue-700">₹8,000</div>
+                    <div class="text-sm text-gray-500 mt-1">3 PPTs (flat package)</div>
+                    <hr class="my-3">
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>✓ Fully designed templates</li>
+                        <li>✓ Data charts & icons</li>
+                        <li>✓ Print-ready + editable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gray-100 p-5 rounded-xl flex justify-between items-center flex-wrap gap-4">
+                <div>
+                    <span class="text-lg font-semibold text-gray-700">📦 Total Package Value:</span>
+                    <span class="text-3xl font-black text-blue-800 ml-2">₹60,000</span>
+                    <p class="text-xs text-gray-500 mt-1">*All taxes extra as applicable (GST 18% if required)</p>
+                </div>
+                <div class="bg-white px-5 py-2 rounded-full shadow-sm text-sm font-medium text-green-700 border border-green-200">
+                    ✅ All services bundled — No hidden charges
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Timeline & Milestones -->
+        <section id="timeline" class="mb-12 page-break">
+            <h2 class="text-2xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">📅 4. Project Timeline & Deliverable Schedule</h2>
+            <p class="mb-4">The project will be executed in 3 phases to ensure quality and timely delivery. Milestones are aligned with client approvals.</p>
+            <table class="requirement-table w-full">
+                <thead>
+                    <tr><th>Phase</th><th>Deliverables</th><th>Estimated Duration</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="font-medium">Phase 1: Kickoff & Strategy</td><td>Brand guidelines, content calendar, PPT outlines approval</td><td>Week 1</td></tr>
+                    <tr><td class="font-medium">Phase 2: Bulk Creation (Posts & Reels)</td><td>First 100 posts + 30 reels delivered in batches</td><td>Weeks 2–6</td></tr>
+                    <tr><td class="font-medium">Phase 3: PPT Design & Final Assets</td><td>3 PPTs (50, 40, 20 slides) + remaining 100 posts & 30 reels</td><td>Weeks 7–10</td></tr>
+                    <tr><td class="font-medium">Final Review & Handover</td><td>All source files, master folder, revision closure</td><td>Week 11</td></tr>
+                </tbody>
+            </table>
+            <div class="mt-4 text-sm text-gray-600 bg-gray-50 p-3 rounded-md">⏱️ Schedule is flexible based on feedback. We accommodate urgent requests with prior intimation.</div>
+        </section>
+
+        <!-- 5. Quality Assurance & Revisions -->
+        <section id="quality-assurance" class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">🔄 5. Quality Assurance & Revision Policy</h2>
+            <ul class="list-disc pl-6 space-y-2 mb-4">
+                <li><strong>Revisions:</strong> Up to 2 rounds of revisions per post/reel/PPT after initial draft delivery.</li>
+                <li><strong>Feedback Turnaround:</strong> Client feedback within 48 hours ensures faster delivery.</li>
+                <li><strong>File Management:</strong> All deliverables hosted on Google Drive / Dropbox with organized folders (Posts, Reels, Presentations).</li>
+                <li><strong>Copyright:</strong> Full commercial rights transferred to GrowHaz after final payment.</li>
+                <li><strong>Design Consistency:</strong> Dedicated designer + project manager to maintain brand voice across 200+ assets.</li>
+            </ul>
+            <div class="bg-green-50 p-4 rounded-lg border border-green-200 text-green-800 text-sm">
+                🌟 <span class="font-semibold">Our Commitment:</span> Every reel is edited for high retention, every post follows platform best practices, and every PPT is presentation-ready with animations and infographics.
+            </div>
+        </section>
+
+        <!-- 6. Terms & Inclusions (custom) -->
+        <section id="terms" class="mb-12 page-break">
+            <h2 class="text-2xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-4">📜 6. Terms, Inclusions & Deliverables Matrix</h2>
+            <h3 class="text-lg font-semibold mt-4">What's Included in the Package:</h3>
+            <div class="grid md:grid-cols-2 gap-4 mt-3">
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="font-bold">✅ Creative Services</p>
+                    <ul class="list-disc pl-5 text-sm">
+                        <li>Custom graphics for 200 posts (1–3 pages/poster)</li>
+                        <li>60 short reels (45–60 sec) with music licensing</li>
+                        <li>3 PPT decks with 50, 40, 20 pages</li>
+                        <li>Unlimited revisions on concept stage</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="font-bold">✅ Project Management</p>
+                    <ul class="list-disc pl-5 text-sm">
+                        <li>Dedicated WhatsApp/Email support</li>
+                        <li>Weekly progress reports</li>
+                        <li>Content calendar planning</li>
+                        <li>Final asset archival (source files)</li>
+                    </ul>
+                </div>
+            </div>
+            <h3 class="text-lg font-semibold mt-6">Payment Terms (as proposed to Hemant Kumar Chourasiya):</h3>
+            <table class="requirement-table mt-2">
+                <thead><tr><th>Milestone</th><th>Amount</th><th>Due Date</th></tr></thead>
+                <tbody>
+                    <tr><td>Advance (Project Kickoff)</td><td>₹18,000 (30%)</td><td>Upon Agreement</td></tr>
+                    <tr><td>Second Installment (Mid-way: 100 posts + 30 reels delivered)</td><td>₹24,000 (40%)</td><td>End of Phase 2</td></tr>
+                    <tr><td>Final Payment (Complete delivery + 3 PPTs)</td><td>₹18,000 (30%)</td><td>Before Final Handover</td></tr>
+                </tbody>
+            </table>
+            <p class="text-sm text-gray-500 mt-3">*All pricing mentioned in INR. Invoices will be issued by Scan Spot (service provider). GST extra if applicable.</p>
+        </section>
+
+        <!-- 7. Approval Section (client name added) -->
+        <section id="approval" class="mt-12 page-break">
+            <h2 class="text-2xl font-bold text-blue-800 border-b border-blue-200 pb-2 mb-6">📝 7. Approval & Sign-off</h2>
+            <p class="mb-4">By signing below, Hemant Kumar Chourasiya (GrowHaz) acknowledges that the services, pricing, and deliverables match the agreed scope: <strong>200 posts, 60 reels, and 3 PPTs (50, 40, 20 pages)</strong>. The parties agree to move forward with the timeline and terms stated in this document.</p>
+            <table class="requirement-table w-full mt-4">
+                <thead>
+                    <tr>
+                        <th class="w-1/3">Name</th>
+                        <th class="w-1/3">Role / Company</th>
+                        <th class="w-1/3">Signature & Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-medium">Hemant Kumar Chourasiya</td>
+                        <td>Client / Owner - GrowHaz</td>
+                        <td class="text-center italic text-gray-400">_________________</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium">Karishma Sirviyyann</td>
+                        <td>Project Lead - Scan Spot</td>
+                        <td class="text-center italic text-gray-400">_________________</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium">Raj Parmar / Om Uikey</td>
+                        <td>Creative Operations - Scan Spot</td>
+                        <td class="text-center italic text-gray-400">_________________</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-6 text-center text-sm text-gray-500 border-t pt-4">
+                <p>This SRS and Service Agreement constitutes the entire understanding between Scan Spot and GrowHaz (Hemant Kumar Chourasiya).</p>
+                <p>For any questions, contact: support@scanspot.in | +91 9876543210 (demo)</p>
+            </div>
+        </section>
+
+        <!-- Additional footnote: Summary of key numbers -->
+        <div class="mt-8 text-xs text-center text-gray-400 border-t pt-4 no-print">
+            📌 Generated on: <span id="currentDateDisplay"></span> | KV Designer Studio style adapted for GrowHaz deliverables.
+        </div>
+    </div>
+
+    <script>
+        // Dynamic date update for cover and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const dateString = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            const dateElements = document.querySelectorAll('[data-current-date]');
+            dateElements.forEach(el => el.textContent = dateString);
+            const footerSpan = document.getElementById('currentDateDisplay');
+            if(footerSpan) footerSpan.textContent = dateString;
+            
+            // Optional: add dynamic year to cover if needed
+            const coverDateSpan = document.querySelector('.border-t.border-gray-200.py-4.mt-2 p:first-child');
+            // no extra changes, keep professional.
+        });
+    </script>
+</body>
+</html>
